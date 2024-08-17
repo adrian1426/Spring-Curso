@@ -5,17 +5,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Motor {
-	@Value("XX1")
 	private String marca;
-	
-	@Value("1995")
 	private Integer modelo;
 	
-	public Motor() {
-		
-	}
-
-	public Motor(String marca, Integer modelo) {
+	public Motor(@Value("XX1") String marca, @Value("1995") Integer modelo) {
 		this.marca = marca;
 		this.modelo = modelo;
 	}
