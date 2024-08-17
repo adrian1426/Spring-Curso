@@ -8,16 +8,14 @@ public class Motor {
 	private String marca;
 	private Integer modelo;
 	
-	public Motor(@Value("XX1") String marca, @Value("1995") Integer modelo) {
-		this.marca = marca;
-		this.modelo = modelo;
+	public Motor() {
 	}
-
 
 	public String getMarca() {
 		return marca;
 	}
 
+	@Value("XX1")
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
@@ -26,6 +24,7 @@ public class Motor {
 		return modelo;
 	}
 
+	@Value("1995")
 	public void setModelo(Integer modelo) {
 		this.modelo = modelo;
 	}

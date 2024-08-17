@@ -10,17 +10,14 @@ public class Coche {
 	private Integer modelo;
 	private Motor motor;
 
-	@Autowired
-	public Coche(@Value("Ford") String marca,@Value("2024") Integer modelo, Motor motor) {
-		this.marca = marca;
-		this.modelo = modelo;
-		this.motor = motor;
+	public Coche() {
 	}
 
 	public String getMarca() {
 		return marca;
 	}
 
+	@Value("Ford")
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
@@ -29,6 +26,7 @@ public class Coche {
 		return modelo;
 	}
 
+	@Value("2024")
 	public void setModelo(Integer modelo) {
 		this.modelo = modelo;
 	}
@@ -37,6 +35,7 @@ public class Coche {
 		return motor;
 	}
 
+	@Autowired
 	public void setMotor(Motor motor) {
 		this.motor = motor;
 	}
