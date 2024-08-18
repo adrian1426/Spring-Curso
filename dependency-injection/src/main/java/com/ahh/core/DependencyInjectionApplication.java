@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.ahh.core.profile.EnvironmentService;
+import com.ahh.core.scopes.EjemploScopeService;
 
 
 @SpringBootApplication
@@ -17,9 +17,12 @@ public class DependencyInjectionApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class, args);
 		
-		EnvironmentService environmentService=context.getBean(EnvironmentService.class);
+		EjemploScopeService ejemploScopeService=context.getBean(EjemploScopeService.class);
+		EjemploScopeService ejemploScopeService2=context.getBean(EjemploScopeService.class);
 		
-		log.info("Environment: {}",environmentService.getEnvironment());
+		log.info("Bean equals {}",ejemploScopeService.equals(ejemploScopeService2));
+		log.info("Bean == {}",ejemploScopeService==ejemploScopeService2);
+
 	}
 
 }
