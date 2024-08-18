@@ -6,10 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.ahh.core.atributo.Coche;
-import com.ahh.core.qualifiers.Animal;
-import com.ahh.core.qualifiers.Pajaro;
-import com.ahh.core.qualifiers.Perro;
+import com.ahh.core.profile.EnvironmentService;
+
 
 @SpringBootApplication
 public class DependencyInjectionApplication {
@@ -18,10 +16,10 @@ public class DependencyInjectionApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class, args);
-
-		Animal animal = context.getBean("pajaro",Animal.class);
-
-		log.info("Animal nombre= {} edad= {}",animal.getNombre(), animal.getEdad());
+		
+		EnvironmentService environmentService=context.getBean(EnvironmentService.class);
+		
+		log.info("Environment: {}",environmentService.getEnvironment());
 	}
 
 }
