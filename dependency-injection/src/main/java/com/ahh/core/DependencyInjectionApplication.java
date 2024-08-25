@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.ahh.core.autowire.AreaCalculateService;
+import com.ahh.core.lifecycle.LifeCycleBean;
 
 
 @SpringBootApplication
@@ -18,9 +18,7 @@ public class DependencyInjectionApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class, args);
 		
-		AreaCalculateService areaCalculateService=context.getBean(AreaCalculateService.class);
-		
-		log.info("Area total: {}",areaCalculateService.calcAreas());
+		LifeCycleBean lifeCycleBean=context.getBean(LifeCycleBean.class);
 	}
 
 }
